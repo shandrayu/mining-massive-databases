@@ -1,19 +1,18 @@
-# Mining massive databases homework - Recommendation system
+# Homework Report
 
-## Authors
+**Team:**
 
-[//]: # "add names"
-
-- Name
-- Name
-- Name
-- Name
+- Diana Kapatsyn
+- Yuliia Sandra
+- Oleksandr Shevchenko
+- Nazariy Vysokinskyi
 
 ## Barcelona dataset recommendation system
 
-The goal of this task is to recommend similar apartments (items) based on input query (apartment description).
+### Goal
+Recommend similar apartments (items) based on input query (apartment description).
 
-Tasks:
+### Tasks
 
 - Convert text feature with TF-IDF to vector of features
 - Grid search for parameters
@@ -21,14 +20,26 @@ Tasks:
 - Calculate ground truth
 - Choose metrics. Explain choice
 
-- Add to report:
-  - Accuracy for 4 different set of parameters
-  - Computation time for tuning (grid search) procedure
-  - Machine characteristics
+### Results
+#### Metrics for different sets of hyperparameters
+| num_features | bucket_lenght | num_hash_tables | num_neighbours | F1-score    |
+|--------------|---------------|-----------------|----------------|----------|
+| 20           | 2.0           | 1               | 5              | 0.006398 |
+| 20           | 2.0           | 1               | 15             | 0.004784 |
+| 20           | 2.0           | 1               | 50             | 0.009361 |
+| 20           | 2.0           | 1               | 100            | 0.009900 |
+| 30           | 2.0           | 1               | 5              | 0.017937 |
+| 30           | 2.0           | 1               | 15             | 0.007176 |
+| 30           | 2.0           | 1               | 50             | 0.009225 |
+| 30           | 2.0           | 1               | 100            | 0.009005 |
+
+#### Computation time
+
+#### Machine characteristics
 
 ## Ukrainian Wikipedia recommendation system
 
-Tasks:
+### Tasks
 
 - Convert text feature with TF-IDF to vector of features
 - Grid search for parameters
@@ -36,14 +47,13 @@ Tasks:
 - Calculate ground truth
 - Choose metrics. Explain choice
 
-- Add to report:
-  - Accuracy for 4 different set of parameters
-  - Computation time for tuning (grid search) procedure
-  - Machine characteristics
+### Results
+#### Metrics for different sets of hyperparameters
+#### Computation time
+#### Machine characteristics
 
 ## Run Airbnb-trained model on Wikipedia data
-
-- Run
-- Report metrics
-- Compare with native data learning
-- Explainhy there is a difference
+### Observations
+#### Metrics for different sets of hyperparameters
+#### Comparison with native data learning
+#### Difference explanation
