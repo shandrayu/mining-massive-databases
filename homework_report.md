@@ -3,7 +3,7 @@
 **Team:**
 
 - Diana Kapatsyn
-- Yuliia Sandra
+- Yuliia Shandra
 - Oleksandr Korniienko
 - Nazariy Vysokinskyi
 
