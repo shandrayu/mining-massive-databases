@@ -32,6 +32,8 @@ Recommend similar apartments (items) based on input query (apartment description
 #### Computation time
 Computation time ranges from 3.6457 to 9.8337 seconds.
 
+Time for GridSearch: 310.2179 seconds.
+
 #### Machine characteristics
 Google Colab free tier machine.
 
@@ -58,6 +60,8 @@ Here are some of the best accuracies from *results_gridsearch_wikipedia.csv*:
 #### Computation time
 Computation time ranges from 0.6298 to 2.691 seconds.
 
+Time for GridSearch: 859.8582 seconds.
+
 #### Machine characteristics
 Google Colab free tier machine.
 
@@ -78,6 +82,36 @@ While still having accuracy > 0.8, learning the native set of hyperparameters is
 There are some notable differences between native hyperparameters. 
 * Native hyperparameter models tend to lower computation time with mean computation time ≈1.29 (versus 1.7509 with borrowed hyperparameters).
 * Native hyperparameter models have higher, near perfect, accuracies (versus 0.91 on borrowed sets)
+
+
+##### Example 1
+Borrowed parameters:
+| n_features | metric    | n_trees | num_neighbours | subsample_size | accuracy | time  |
+|------------|-----------|---------|----------------|----------------|----------|-------|
+| 30         | euclidean | 30      | 50             | 1000            | 0.991   | 2.2193|
+
+Native parameters:
+| n_features | metric    | n_trees | num_neighbours | subsample_size | accuracy | time  |
+|------------|-----------|---------|----------------|----------------|----------|-------|
+| 15         | euclidean | 30      | 50             | 1000            | 0.999   | 2.1558|
+
+We can see that the accuracy for the Barcelona parameters is lower, but insignificantly.
+
+So, let's see on the another example.
+
+##### Example 2
+Borrowed parameters:
+| n_features | metric    | n_trees | num_neighbours | subsample_size | accuracy | time  |
+|------------|-----------|---------|----------------|----------------|----------|-------|
+| 15         | euclidean | 30      | 10             | 1000            | 0.789   | 1.9276|
+
+Native parameters:
+| n_features | metric    | n_trees | num_neighbours | subsample_size | accuracy | time  |
+|------------|-----------|---------|----------------|----------------|----------|-------|
+| 15         | euclidean | 30      | 10             | 1000            | 0.943   | 4.0774|
+
+This showcases results difference on parameters, that give 94% accuracy on the Barcelona dataset, and 79% accuracy on the Wikipedia dataset.
+This example shows more clearly, that the parameters, that are suitable for the Barcelona dataset can be not suitable for the Wikipedia dataset.
 
 #### Difference explanation
 The difference in accuracy between tuning parameters on the Airbnb dataset and applying them to the Wikipedia
