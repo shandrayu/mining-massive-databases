@@ -4,7 +4,7 @@
 
 - Diana Kapatsyn
 - Yuliia Sandra
-- Oleksandr Shevchenko
+- Oleksandr Korniienko
 - Nazariy Vysokinskyi
 
 ## Barcelona dataset recommendation system
