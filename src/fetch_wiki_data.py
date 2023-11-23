@@ -57,9 +57,9 @@ message_types = {"edit"}
 wikis = {"enwiki"}#, "wikidatawiki"}
 wikis_str = "_".join(wikis)
 fetching_time_sec = 10000
-changes = [change for change in fetch_users(EventSource(url), fetching_time_sec, message_types, wikis)]
 
-print(f"Collected {len(changes)} edits")
+with open(f"changes_{len(changes)}_{wikis_str}_{time.time()}.json", 'w') as fout:
+    for item in fetch_users(EventSource(url), fetching_time_sec, message_types, wikis):
+        fout.write(json.dumps(item) + "\n")
 
-with open(f"changes_{len(changes)}_{wikis_str}_{fetching_time_sec}_sec.json", "w", encoding="utf-8") as json_file:
-    json.dump(changes, json_file, ensure_ascii=True, indent=4)
+
